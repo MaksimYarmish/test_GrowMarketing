@@ -128,6 +128,12 @@ const Navbar = ({ setShowSidebar, showSidebar, open, setOpen }) => {
     setOpenPasswordChange(true);
   };
 
+  const getTimeZone = () => {
+    const offsetMinutes = date.getTimezoneOffset();
+    const offsetHours = -offsetMinutes / 60;
+    return (`UTC${offsetHours >= 0 ? '+' : ''}${offsetHours}`);
+  };
+
   return (
     <div className={`${pathname.includes('/client/') || pathname.includes('download') ? 'invisible' : 'visible'}`}>
       <div
@@ -145,7 +151,7 @@ const Navbar = ({ setShowSidebar, showSidebar, open, setOpen }) => {
             </IconButton>
             <div>
               <p className="text-sky-400 text-xl gap-1 flex items-center">
-                <PiTimerLight className="text-[25px]" /> {date.toLocaleTimeString()}
+                <PiTimerLight className="text-[25px]" /> {`${date.toLocaleTimeString()} ${getTimeZone()}`}
               </p>
             </div>
           </div>
