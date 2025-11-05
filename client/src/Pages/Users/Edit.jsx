@@ -69,7 +69,7 @@ const EditModal = ({ open, modalType = "employee", setOpen }) => {
       aria-describedby="alert-dialog-slide-description">
       <DialogTitle className="flex items-center justify-between">
         <div className="text-sky-400 font-primary">
-          {`Edit ${modalType === "employee" ? "Employee" : "Contact"}`}
+          {`Edit ${modalType === "employee" ? "Employee" : "Client"}`}
         </div>
         <div className="cursor-pointer" onClick={handleClose}>
           <PiXLight className="text-[25px]" />
@@ -79,7 +79,7 @@ const EditModal = ({ open, modalType = "employee", setOpen }) => {
         <div className="flex flex-col gap-2 p-3 text-gray-500 font-primary">
           <div className="text-xl flex justify-start items-center gap-2 font-normal">
             <PiNotepad size={23} />
-            <span>{`${modalType === "employee" ? "Employee" : "Contact"} Detials`}</span>
+            <span>{`${modalType === "employee" ? "Employee" : "Client"} Detials`}</span>
           </div>
           <Divider />
           <table className="mt-4">

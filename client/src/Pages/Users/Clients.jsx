@@ -194,7 +194,7 @@ const Clients = () => {
   return (
     <div className="w-full">
 
-      <EditClient open={openEditModal} modalType={"contact"} setOpen={setOpenEditModal} />
+      <EditClient open={openEditModal} modalType={"client"} setOpen={setOpenEditModal} />
       <DeleteClient open={openDeleteModal} setOpen={setOpenDeleteModal} userId={selectedUserId} />
       <Filter open={openFilters} setOpen={setOpenFilters} />
       <User open={openUser} setOpen={setOpenUser} />

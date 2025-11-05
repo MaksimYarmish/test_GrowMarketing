@@ -101,7 +101,7 @@ const CreateUser = ({ open, modalType, scroll, setOpen }) => {
         aria-describedby="alert-dialog-slide-description">
         <DialogTitle className="flex items-center justify-between">
           <div className="text-sky-400 font-primary">
-            {`Add New ${modalType === "employee" ? "Employee" : "Contact"}`}
+            {`Add New ${modalType === "employee" ? "Employee" : "Client"}`}
           </div>
           <div className="cursor-pointer" onClick={handleClose}>
             <PiXLight className="text-[25px]" />
@@ -111,7 +111,7 @@ const CreateUser = ({ open, modalType, scroll, setOpen }) => {
           <div className="flex flex-col gap-2 p-3 text-gray-500 font-primary">
             <div className="text-xl flex justify-start items-center gap-2 font-normal">
               <PiNotepad size={23} />
-              <span>Employee Detials</span>
+              <span>{`${modalType === "employee" ? "Employee" : "Client"} Detials`}</span>
             </div>
             <Divider />
             <table className="mt-4">

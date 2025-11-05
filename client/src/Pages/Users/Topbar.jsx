@@ -124,7 +124,7 @@ const Topbar = ({ view, setView, setIsFiltered, isFiltered }) => {
             </div>
             <div>
               <Tooltip title="Add New Client" placement="top" arrow>
-                <div onClick={handleCreateopen("body", "contact")}>
+                <div onClick={handleCreateopen("body", "client")}>
                   <button className="bg-primary-red hover:bg-red-400 transition-all text-white w-[44px] h-[44px] flex justify-center items-center rounded-full shadow-xl">
                     <Add />
                   </button>
