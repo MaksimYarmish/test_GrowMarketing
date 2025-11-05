@@ -22,7 +22,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const EditModal = ({ open, setOpen }) => {
+const EditModal = ({ open, modalType = "employee", setOpen }) => {
   /////////////////////////////////////// VARIABLES ///////////////////////////////////////
   const dispatch = useDispatch();
   const { currentEmployee, isFetching, error } = useSelector((state) => state.user);
@@ -68,7 +68,9 @@ const EditModal = ({ open, setOpen }) => {
       maxWidth="sm"
       aria-describedby="alert-dialog-slide-description">
       <DialogTitle className="flex items-center justify-between">
-        <div className="text-sky-400 font-primary">Edit Employee</div>
+        <div className="text-sky-400 font-primary">
+          {`Edit ${modalType === "employee" ? "Employee" : "Client"}`}
+        </div>
         <div className="cursor-pointer" onClick={handleClose}>
           <PiXLight className="text-[25px]" />
         </div>
@@ -77,7 +79,7 @@ const EditModal = ({ open, setOpen }) => {
         <div className="flex flex-col gap-2 p-3 text-gray-500 font-primary">
           <div className="text-xl flex justify-start items-center gap-2 font-normal">
             <PiNotepad size={23} />
-            <span>Employee Detials</span>
+            <span>{`${modalType === "employee" ? "Employee" : "Client"} Detials`}</span>
           </div>
           <Divider />
           <table className="mt-4">
